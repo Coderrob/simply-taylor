@@ -46,8 +46,7 @@ Supported environment variables:
 
 The repo script lives at `scripts/squarespace-dev.js` and forwards the current template directory to `squarespace-server`.
 
-Base Template
-------------------------------
+## Base Template
 
 A minimal template for developers getting started with Squarespace, using developer mode. No tweaks, no web fonts, no static assets, no static pages, no system collections, no collection features, no modules at all.
 
@@ -76,6 +75,7 @@ Squarespace template files are organized using the following folder structure at
 - **assets**: design assets — example: images, fonts and icons
 - **blocks**: reusable blocks of JSON-T (AKA partials) — ex: navigation.block
 - **collections**: collection files — [collection].list, [collection].item, [collection].conf
+- **pages**: static page files — [static].page, [static].page.conf
 - **scripts**: Javascript files — site.js
 - **styles**: stylesheet files — styles.css, styles.less
 - [**root**]: sitewide files — site.region, template.conf
@@ -99,4 +99,3 @@ See the [Template Configuration documentation](https://developers.squarespace.co
 ### Further Reading
 
 For further reading please consult the [Squarespace Template Overview](https://developers.squarespace.com/template-overview/) and other documentation on the Squarespace developers website.
-
