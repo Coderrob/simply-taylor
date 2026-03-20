@@ -295,10 +295,57 @@ img {
 }
 
 body.homepage .content-container {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: clamp(320px, 58vh, 640px);
+  display: flex;
+  align-items: flex-end;
   padding: clamp(28px, 4vw, 44px);
   background:
     linear-gradient(135deg, rgba(202, 219, 99, 0.36), rgba(255, 247, 241, 0.74) 45%, rgba(183, 215, 238, 0.45));
   border-radius: 28px;
+}
+
+body.homepage .content-container:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 247, 241, 0.72) 0, rgba(255, 247, 241, 0) 22%),
+    radial-gradient(circle at 82% 18%, rgba(200, 61, 75, 0.12) 0, rgba(200, 61, 75, 0) 28%),
+    radial-gradient(circle at 28% 78%, rgba(36, 80, 181, 0.12) 0, rgba(36, 80, 181, 0) 20%),
+    linear-gradient(145deg, rgba(248, 208, 211, 0.92), rgba(255, 247, 241, 0.82) 38%, rgba(183, 215, 238, 0.54) 100%),
+    repeating-linear-gradient(
+      115deg,
+      rgba(39, 24, 31, 0.03) 0,
+      rgba(39, 24, 31, 0.03) 2px,
+      transparent 2px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 247, 241, 0.16) 0,
+      rgba(255, 247, 241, 0.16) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+  background-size:
+    auto,
+    auto,
+    auto,
+    auto,
+    clamp(180px, 22vw, 320px) clamp(180px, 22vw, 320px),
+    clamp(120px, 18vw, 220px) clamp(120px, 18vw, 220px);
+  opacity: 0.98;
+}
+
+body.homepage .content-container > * {
+  position: relative;
+  z-index: 1;
+  max-width: min(720px, 100%);
 }
 
 .main-image {
@@ -327,6 +374,9 @@ body.homepage .content-container {
 .title a:hover,
 .title a:focus {
   color: var(--lipstick);
+  background: transparent;
+  transform: none;
+  text-decoration-color: rgba(200, 61, 75, 0.45);
 }
 
 .meta,
@@ -508,6 +558,11 @@ body.collection-type-blog.view-item {
   body.collection-type-blog.view-item .content-container {
     border-radius: 24px;
   }
+
+  body.homepage .content-container {
+    min-height: clamp(280px, 52vh, 520px);
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -521,6 +576,22 @@ body.collection-type-blog.view-item {
 
   .site-title-heading {
     max-width: none;
+  }
+
+  body.homepage .content-container {
+    min-height: 0;
+    display: block;
+    padding: 24px 20px;
+  }
+
+  body.homepage .content-container:after {
+    background-size:
+      auto,
+      auto,
+      auto,
+      auto,
+      180px 180px,
+      120px 120px;
   }
 
   .blog-list-pagination,

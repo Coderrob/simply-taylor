@@ -1,5 +1,4 @@
-Collections
------------
+## Collections
 
 This folder contains collection definitions. Collections allow you to group together a set of pages, like a gallery, blog or album. Collections are JSON-T templates that determine how data on your site is rendered. Each collection should have a configuration file (`.conf`) and a `.item` and/or `.list` file.
 
@@ -29,9 +28,9 @@ Each `.list` template will have access to the top level `items` key in its conte
 
 ### Collection Item Views (collection.item)
 
-Item views are templates for the individual pages of a collection. Example: blog.item templates a single blog post page. 
+Item views are templates for the individual pages of a collection. Example: blog.item templates a single blog post page.
 
-Each `.item` template will have access to the `item` key in its context. This will contain data attributes relevant to that item. To explore the context for a collection item view, visit any existing blog post or gallery image page using the `?format=json-pretty` query parameter. 
+Each `.item` template will have access to the `item` key in its context. This will contain data attributes relevant to that item. To explore the context for a collection item view, visit any existing blog post or gallery image page using the `?format=json-pretty` query parameter.
 
 ### Further Reading
 
