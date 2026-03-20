@@ -1,1 +1,16 @@
 sftp-config.json
+node_modules/
+.preview/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+.cache/
+coverage/
+dist/
+build/
+out/

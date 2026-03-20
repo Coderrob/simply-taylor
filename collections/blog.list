@@ -29,12 +29,20 @@
         <a href="{fullUrl}">{title}</a>
       {.end}
     </h1>
+    <p class="meta">
+      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a>
+      <span class="byline"> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a></span>
+    </p>
     <!-- excerpt or body -->
     {.if excerpt}
-      {excerpt}
+      <div class="excerpt">
+        {excerpt}
+      </div>
       <a class="link" href="{fullUrl}">Read More</a>
     {.or}
-      {body}
+      <div class="post-body">
+        {body}
+      </div>
     {.end}
   </article>
 
