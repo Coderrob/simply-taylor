@@ -76,7 +76,8 @@ async function readServedFile(urlPath) {
 function startServer() {
   const server = http.createServer(async (req, res) => {
     try {
-      const target = await readServedFile(req.url || '/');
+      const urlPath = new URL(req.url || '/', `http://localhost:${port}`).pathname;
+      const target = await readServedFile(urlPath);
       const stat = await fsp.stat(target);
       const filePath = stat.isDirectory() ? path.join(target, 'index.html') : target;
       const body = await fsp.readFile(filePath);
@@ -106,11 +107,24 @@ function watchStyles() {
     }
   };
 
-  fs.watch(stylesDir, { recursive: true }, (_eventType, filename) => {
+  const scheduleRebuild = (_eventType, filename) => {
     if (!filename || !/\.(less|css)$/i.test(filename)) return;
     clearTimeout(rebuildTimer);
     rebuildTimer = setTimeout(rebuild, 60);
-  });
+  };
+
+  const entries = fs.readdirSync(stylesDir);
+  for (const entry of entries) {
+    const fullPath = path.join(stylesDir, entry);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      fs.watch(fullPath, scheduleRebuild);
+    } else if (/\.(less|css)$/i.test(entry)) {
+      fs.watch(fullPath, scheduleRebuild);
+    }
+  }
+
+  fs.watch(stylesDir, scheduleRebuild);
 }
 
 async function main() {

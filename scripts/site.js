@@ -13,8 +13,25 @@
   }
 
   function getAnime() {
-    if (window.anime && typeof window.anime.animate === 'function') {
-      return window.anime;
+    var animeGlobal = window.anime;
+
+    if (animeGlobal && typeof animeGlobal.animate === 'function') {
+      return animeGlobal;
+    }
+
+    if (typeof animeGlobal === 'function') {
+      var adapter = {
+        animate: function(targets, params) {
+          var options = params || {};
+          return animeGlobal(Object.assign({}, options, { targets: targets }));
+        }
+      };
+
+      if (typeof animeGlobal.stagger === 'function') {
+        adapter.stagger = animeGlobal.stagger;
+      }
+
+      return adapter;
     }
 
     return null;

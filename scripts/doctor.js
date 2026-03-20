@@ -30,7 +30,7 @@ function checkSquarespaceServer() {
     shell: process.platform === 'win32',
   });
 
-  if (!probe.error) {
+  if (!probe.error && probe.status === 0) {
     return {
       ok: true,
       detail: 'squarespace-server is available in the current shell.',
