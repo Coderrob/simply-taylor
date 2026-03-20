@@ -1,23 +1,34 @@
 <nav class="site-navigation">
   <ul class="site-navigation-list">
     {.repeated section items}
+      <li class="site-navigation-item {.section active} active-link{.end}{.if folderActive} active-link active-folder{.end}">
+        {.folder?}
+          <a>{collection.navigationTitle}</a>
+          <ul class="site-sub-navigation-list">
+            {.repeated section items}
+              {.collection?}
+                <li class="site-sub-navigation-item {.section active} active-link{.end}">
+                  <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+                </li>
+              {.end}
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
+              {.section externalLink}
+                <li class="site-sub-navigation-item external-link">
+                  <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+                </li>
+              {.end}
+            {.end}
+          </ul>
+        {.or}
+          {.section collection}
+            <a href="{fullUrl}">{navigationTitle}</a>
+          {.end}
 
-        <!-- collection link -->
-        {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
+          {.section externalLink}
+            <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+          {.end}
         {.end}
-
-        <!-- external link -->
-        {.section externalLink}
-          <a href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
-          </a>
-        {.end}
-
       </li>
-
     {.end}
   </ul>
 </nav>

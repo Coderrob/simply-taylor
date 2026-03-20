@@ -19,24 +19,36 @@
     </p>
 
     <!--MAIN CONTENT-->
-    {body}
+    <div class="post-body">
+      {body}
+    </div>
 
     <!--BLOG INJECTION-->
     {postItemInjectCode}
 
     <!--CATEGORIES-->
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    {.section categories}
+      <div class="post-taxonomy">
+        {.repeated section categories}
+          <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>
+        {.end}
+      </div>
     {.end}
 
     <!--TAGS-->
-    {.repeated section tags}
-      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
+    {.section tags}
+      <div class="post-taxonomy">
+        {.repeated section tags}
+          <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>
+        {.end}
+      </div>
     {.end}
 
     <!--SHARE AND LIKE-->
-    {@|like-button}
-    {@|social-button}
+    <div class="post-actions">
+      {@|like-button}
+      {@|social-button}
+    </div>
 
 
     <!--LOCATION-->

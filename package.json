@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "doctor": "node scripts/doctor.js",
+    "dev": "npm run sqsp:dev",
+    "dev:auth": "npm run sqsp:dev:auth",
+    "dev:verbose": "npm run sqsp:dev:verbose",
+    "start": "npm run preview",
+    "build": "npm run preview:build",
+    "sqsp:dev": "node scripts/squarespace-dev.js",
+    "sqsp:dev:auth": "node scripts/squarespace-dev.js --auth",
+    "sqsp:dev:verbose": "node scripts/squarespace-dev.js --verbose",
+    "preview": "node scripts/preview.js",
+    "preview:build": "node scripts/preview.js --once"
+  },
+  "dependencies": {
+    "less": "^4.6.4"
+  }
+}

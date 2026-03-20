@@ -25,7 +25,7 @@
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
+        {squarespace.main-content}
       </main>
 
       <!--Footer with open block field -->
@@ -34,6 +34,8 @@
       </footer>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

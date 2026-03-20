@@ -1,3 +1,51 @@
+### Local Preview
+
+This repo now includes a small local preview harness for the template stylesheet.
+
+- Copy `.env.example` to `.env` or `.env.local` to configure local settings.
+- `npm run doctor` checks local prerequisites and environment variables.
+- `npm start` starts the local visual preview server.
+- `npm run preview` compiles `styles/base.less` plus `styles/reset.css`, watches for style changes, and serves preview pages at `http://localhost:4321`.
+- `npm run build` runs the local preview stylesheet build.
+- `npm run preview:build` runs a one-off stylesheet compile into `.preview/site.css`.
+- Preview routes:
+  - `/` homepage shell
+  - `/blog.html` blog list approximation
+  - `/post.html` blog item approximation
+
+This does not execute Squarespace JSON-T locally. It is intended for fast visual iteration on the base design system before uploading the template to Squarespace.
+
+### Squarespace Local Development
+
+For the supported local developer workflow, use Squarespace's Local Development Server against a real Developer Mode site.
+
+- Install the official server first by following the Squarespace docs: https://developers.squarespace.com/local-development
+- Run `npm run doctor` if the local environment is not behaving as expected.
+- Preferred setup: copy `.env.example` to `.env` and set `SQUARESPACE_SITE_URL`.
+- Shell environment variables still work and override `.env` values:
+  - PowerShell: `$env:SQUARESPACE_SITE_URL="https://your-site.squarespace.com"`
+- Start the official server from this repo:
+  - `npm run dev`
+  - `npm run sqsp:dev`
+- Optional variants:
+  - `npm run dev:auth`
+  - `npm run dev:verbose`
+  - `npm run sqsp:dev:auth`
+  - `npm run sqsp:dev:verbose`
+- Optional port override:
+  - `.env`: `SQUARESPACE_DEV_PORT=9000`
+  - PowerShell: `$env:SQUARESPACE_DEV_PORT="9000"`
+
+Supported environment variables:
+
+- `SQUARESPACE_SITE_URL`: required for Squarespace-backed local development
+- `SQUARESPACE_DEV_PORT`: port used by the Squarespace local development server
+- `SQUARESPACE_DEV_AUTH`: set to `1` to add `--auth`
+- `SQUARESPACE_DEV_VERBOSE`: set to `1` to add `--verbose`
+- `PREVIEW_PORT`: port used by `npm start`
+
+The repo script lives at `scripts/squarespace-dev.js` and forwards the current template directory to `squarespace-server`.
+
 Base Template
 ------------------------------
 
@@ -51,3 +99,4 @@ See the [Template Configuration documentation](https://developers.squarespace.co
 ### Further Reading
 
 For further reading please consult the [Squarespace Template Overview](https://developers.squarespace.com/template-overview/) and other documentation on the Squarespace developers website.
+
