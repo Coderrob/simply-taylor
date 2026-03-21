@@ -1,5 +1,9 @@
 ### Local Preview
 
+### Template Preview
+
+![Simply Taylor template preview](assets/img/simply-taylor-preview.png)
+
 This repo now includes a small local preview harness for the template stylesheet.
 
 - Copy `.env.example` to `.env` or `.env.local` to configure local settings.
