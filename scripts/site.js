@@ -95,6 +95,44 @@
     });
   }
 
+  function animateHome(anime) {
+    var heroBits = document.querySelectorAll('.home-billboard-copy > *, .home-billboard-image, .home-spray-notes > *');
+    var cards = document.querySelectorAll('.home-module, .home-card');
+    var manifesto = document.querySelector('.home-manifesto, .home-module-poster');
+
+    if (heroBits.length) {
+      anime.animate(heroBits, {
+        opacity: [0, 1],
+        translateY: [28, 0],
+        rotate: [1.2, 0],
+        delay: anime.stagger(90, { start: 100 }),
+        duration: 900,
+        ease: 'out(3)'
+      });
+    }
+
+    if (cards.length) {
+      anime.animate(cards, {
+        opacity: [0, 1],
+        translateY: [34, 0],
+        rotate: [1, 0],
+        delay: anime.stagger(130, { start: 240 }),
+        duration: 1000,
+        ease: 'out(3)'
+      });
+    }
+
+    if (manifesto) {
+      anime.animate(manifesto, {
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 880,
+        delay: 420,
+        ease: 'out(3)'
+      });
+    }
+  }
+
   function animateButtons(anime) {
     var buttons = document.querySelectorAll('.link, .category, .tag, .blog-list-pagination a, .blog-item-pagination a');
 
@@ -131,6 +169,7 @@
     var anime = getAnime();
     if (!anime) return;
 
+    animateHome(anime);
     animateBlogList(anime);
     animateBlogItem(anime);
     animateButtons(anime);

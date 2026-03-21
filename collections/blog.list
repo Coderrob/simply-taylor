@@ -1,15 +1,5 @@
 
-{.section categoryFilter}
-  <p class="filtered-by">Filtered by Category: {@|safe}</p>
-{.end}
-
-{.section tagFilter}
-  <p class="filtered-by">Filtered by Tag: {@|safe}</p>
-{.end}
-
-{.if authorFilter}
-  <p class="filtered-by">Filtered by Author: {author.displayName}</p>
-{.end}
+{@|apply blog-filters.block}
 
 <!-- item loop -->
 {.repeated section items}
@@ -29,10 +19,7 @@
         <a href="{fullUrl}">{title}</a>
       {.end}
     </h1>
-    <p class="meta">
-      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a>
-      <span class="byline"> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a></span>
-    </p>
+    {@|apply blog-item-meta.block}
     <!-- excerpt or body -->
     {.if excerpt}
       <div class="excerpt">

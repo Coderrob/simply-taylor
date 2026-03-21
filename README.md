@@ -15,6 +15,16 @@ This repo now includes a small local preview harness for the template stylesheet
 
 This does not execute Squarespace JSON-T locally. It is intended for fast visual iteration on the base design system before uploading the template to Squarespace.
 
+### License
+
+This repository uses Apache License 2.0 with additional terms that restrict commercial use.
+
+- Core license text: `LICENSE`
+- Additional terms: `COMMERCIAL-USE-RESTRICTIONS.md`
+
+If there is any conflict between the Apache 2.0 text and the additional terms,
+the additional terms govern for this repository.
+
 ### Squarespace Local Development
 
 For the supported local developer workflow, use Squarespace's Local Development Server against a real Developer Mode site.
@@ -79,6 +89,31 @@ Squarespace template files are organized using the following folder structure at
 - **scripts**: Javascript files — site.js
 - **styles**: stylesheet files — styles.css, styles.less
 - [**root**]: sitewide files — site.region, template.conf
+
+### Template Partials
+
+This repo now uses Squarespace template partials (`/blocks/*.block`) so aesthetic variants can be swapped without duplicating full page templates.
+
+- `blocks/home-active.block`: single switch point for the current homepage variant
+- `blocks/home-variant-collision.block`: current poster-wall / collision layout
+- `blocks/home-variant-soft-subversion.block`: alternate softer editorial variant
+- `blocks/blog-item-meta.block`: shared blog date/author markup
+- `blocks/blog-filters.block`: shared blog filter banner markup
+
+To switch homepage aesthetics for A/B testing, change one line in `blocks/home-active.block`:
+
+```txt
+{@|apply home-variant-collision.block}
+```
+
+Swap to:
+
+```txt
+{@|apply home-variant-soft-subversion.block}
+```
+
+Squarespace partial docs:
+https://developers.squarespace.com/template-partials
 
 ### Essential Files
 

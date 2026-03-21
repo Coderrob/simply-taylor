@@ -1,0 +1,79 @@
+<article class="home-page">
+  <section class="home-hero">
+    <div class="home-hero-copy">
+      <p class="home-kicker">Soft subversion / retro nerve / no performance</p>
+      <h1>A subversive, retro-inspired editorial aesthetic with no interest in behaving.</h1>
+      <p class="home-intro">
+        Simply Taylor blends 70s styling, bold graphic type, and non-performative femininity into one editorial shop
+        world: soft knits against hard black lettering, calm poses with striking framing, and vintage silhouettes
+        cut with a sharper, more liberated point of view.
+      </p>
+      <div class="home-actions">
+        <a class="link" href="/blog">Read the latest edit</a>
+        <a class="link" href="/blog">Browse the journal</a>
+      </div>
+    </div>
+
+    <div class="home-image-stack">
+      <figure class="home-portrait">
+        <img alt="Editorial portrait of a woman in soft streetwear styling" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80">
+      </figure>
+      <figure class="home-detail">
+        <img alt="Vintage-inspired fashion detail with a direct editorial pose" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80">
+      </figure>
+    </div>
+  </section>
+
+  <section class="home-grid" aria-label="Featured stories">
+    <article class="home-card">
+      <a class="home-card-image" href="/blog">
+        <img alt="Woman in a strong street-style fashion portrait" src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80">
+      </a>
+      <div class="home-card-copy">
+        <p class="home-card-kicker">Journal</p>
+        <h2><a href="/blog">Soft Subversion</a></h2>
+        <p>
+          Washed tees, blunt slogans, and slight androgyny styled with the calm confidence of someone not auditioning femininity.
+        </p>
+      </div>
+    </article>
+
+    <article class="home-card">
+      <a class="home-card-image" href="/blog">
+        <img alt="Editorial beauty portrait with vintage fashion styling" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80">
+      </a>
+      <div class="home-card-copy">
+        <p class="home-card-kicker">Catalog</p>
+        <h2><a href="/blog">Anti-Performance</a></h2>
+        <p>
+          Powder tones, sheer layers, and sharp accessories merchandised with tension instead of prettiness.
+        </p>
+      </div>
+    </article>
+
+    <article class="home-card">
+      <a class="home-card-image" href="/blog">
+        <img alt="Contemporary fashion portrait with a confident pose" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80">
+      </a>
+      <div class="home-card-copy">
+        <p class="home-card-kicker">Editorial</p>
+        <h2><a href="/blog">Liberated Editorial</a></h2>
+        <p>
+          Clean editorial framing disrupted by bold graphic interruptions, ironies, and a refusal to overperform softness.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="home-manifesto">
+    <div>
+      <p class="home-card-kicker">Manifesto</p>
+      <h2>Soft / bold. Vintage / ironic. Feminine / unobedient.</h2>
+    </div>
+    <p>
+      The whole identity lives in the contrast: pastel fields against black type, vintage styling against modern irony,
+      calm bodies against striking framing, and clean layout against playful graphic chaos. That tension is the aesthetic,
+      not decoration applied after the fact.
+    </p>
+  </section>
+</article>
