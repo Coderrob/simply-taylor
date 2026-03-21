@@ -37,6 +37,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/dist/bundles/anime.umd.min.js"></script>
 
+    <squarespace:script src="guards.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
